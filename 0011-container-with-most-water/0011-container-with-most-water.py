@@ -4,8 +4,7 @@ class Solution:
         left, right = 0, len(height) - 1
         area = 0
         while left < right:
-            tmp = (right - left) * min(height[left], height[right])
-            area = max(tmp, area)
+            area = max(area, (right - left) * min(height[left], height[right]))
             if height[left] < height[right]:
                 left += 1
             else:
